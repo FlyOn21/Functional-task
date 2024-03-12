@@ -45,23 +45,4 @@ public class PasswordValidation {
         }
         return hashedInputPassword.equals(storedHash);
     }
-
-    public static void main(String[] args) {
-        String originalPassword = "Password";
-        String salt = generateSalt(16);
-        String hashedPassword = hashPassword(originalPassword, salt);
-
-        System.out.println("Original Password: " + originalPassword);
-        System.out.println("Salt: " + salt);
-        System.out.println("Hashed Password: " + hashedPassword);
-
-        String inputPassword = "test";
-        boolean isPasswordCorrect = validatePassword(inputPassword, hashedPassword, salt);
-
-        if(isPasswordCorrect) {
-            System.out.println("Input password is correct.");
-        } else {
-            System.out.println("Input password is incorrect.");
-        }
-    }
 }
