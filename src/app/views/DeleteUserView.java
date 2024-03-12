@@ -1,11 +1,7 @@
 package app.views;
 
-import app.entitys.User;
-import app.models.AllUsersOrSpecificUserModel;
 import app.models.DeleteUserModel;
-import app.utils.Printer;
 
-import java.util.AbstractMap;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Scanner;
@@ -31,7 +27,7 @@ public class DeleteUserView {
             authentificationResult.get(false).forEach(System.out::println);
             return;
         }
-        boolean isDelete = userChoiceСonfirmation(scanner);
+        boolean isDelete = userChoiceConfirmation(scanner);
         if (isDelete) {
             deleteCompleted = deleteUserModel.deleteUser(email);
         }
@@ -43,7 +39,7 @@ public class DeleteUserView {
 
     }
 
-    private boolean userChoiceСonfirmation(Scanner scanner) {
+    private boolean userChoiceConfirmation(Scanner scanner) {
         System.out.println("Are you sure you want to delete this user? (Y/N)");
         String choice = scanner.nextLine().trim();
         return choice.equalsIgnoreCase("Y");

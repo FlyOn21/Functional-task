@@ -1,10 +1,7 @@
 package app.views;
 
-import app.entitys.User;
 import app.models.UpdateUserModel;
-import app.utils.Printer;
 
-import java.util.AbstractMap;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Scanner;
@@ -32,11 +29,12 @@ public class UpdateUserView {
             System.out.print("Enter your choice: ");
             String choice = scanner.nextLine().trim();
             int checkInt;
+            boolean isUpdated;
             switch (choice) {
                 case "1":
                     System.out.println("Input new username: ");
                     String inputUsername  = scanner.nextLine().trim();
-                    boolean isUpdated = updateUserModel.updateUsername(email, inputUsername);
+                    isUpdated = updateUserModel.updateUsername(email, inputUsername);
                     printUpdateStatus(isUpdated);
                     return;
                 case "2":
@@ -55,11 +53,7 @@ public class UpdateUserView {
                         return;
                     }
                     boolean inputIsActiveBol;
-                    if (checkInt == 1) {
-                        inputIsActiveBol = true;
-                    } else {
-                       inputIsActiveBol = false;
-                    }
+                    inputIsActiveBol = checkInt == 1;
                     isUpdated = updateUserModel.updateIsActive(email, inputIsActiveBol);
                     printUpdateStatus(isUpdated);
                     return;
@@ -73,11 +67,7 @@ public class UpdateUserView {
                         return;
                     }
                     boolean inputIsAdminBol;
-                    if (checkInt == 1) {
-                        inputIsAdminBol = true;
-                    } else {
-                        inputIsAdminBol = false;
-                    }
+                    inputIsAdminBol = checkInt == 1;
                     isUpdated = updateUserModel.updateIsAdmin(email, inputIsAdminBol);
                     printUpdateStatus(isUpdated);
                     return;

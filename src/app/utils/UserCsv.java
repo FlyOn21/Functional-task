@@ -40,7 +40,6 @@ public class UserCsv {
     private ArrayList<List<String>> readCsv() throws IOException {
         String path = Config.ABS_USER_FILE_PATH;
         List<List<String>> records = new ArrayList<>();
-        String headerLine;
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             header = br.readLine();
 
@@ -50,8 +49,7 @@ public class UserCsv {
                 records.add(Arrays.asList(values));
             }
         }
-        ArrayList<List<String>> units = new ArrayList<>(records);
-        return units;
+        return new ArrayList<>(records);
     }
 
     public void writeCsv(LinkedHashMap<String, User> users) throws IOException {

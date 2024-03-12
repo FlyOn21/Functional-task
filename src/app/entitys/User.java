@@ -10,7 +10,7 @@ public class User {
     private final String email;
     private String phone;
     private String name;
-    private String salt;
+    private final String salt;
     private final Long createTimestamp;
     private Long updateTimestamp;
 

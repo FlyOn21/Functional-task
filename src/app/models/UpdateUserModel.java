@@ -25,12 +25,11 @@ public class UpdateUserModel {
             error.put(false, List.of("Some problem, please try again later"));
             return error;
         }
-        Hashtable<Boolean, List<String>> authentificationResult = AuthentificationUser.loginProcessing(
+        return AuthentificationUser.loginProcessing(
                 email,
                 password,
                 users
         );
-        return authentificationResult;
     }
 
     public boolean updateUsername(String email, String username) {

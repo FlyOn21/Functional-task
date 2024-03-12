@@ -10,11 +10,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 public class CreateUserModel {
-    private Hashtable<Boolean, List<String>> result = new Hashtable<>();
-    private boolean isCreate = false;
-    private List<String> errors = new ArrayList<>();
+    private  final Hashtable<Boolean, List<String>> result = new Hashtable<>();
+    private final boolean isCreate = false;
+    private final List<String> errors = new ArrayList<>();
 
-    private String salt = PasswordValidation.generateSalt(Config.SALT_LENGTH);
+    private final String salt = PasswordValidation.generateSalt(Config.SALT_LENGTH);
 
     private final UserCsv workWithCsv = new UserCsv();
 

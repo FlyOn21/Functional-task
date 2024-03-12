@@ -3,7 +3,6 @@ package app.models;
 import app.entitys.User;
 import app.utils.AuthentificationUser;
 import app.utils.UserCsv;
-import app.utils.WorkWithCsv;
 
 import java.io.IOException;
 import java.util.Hashtable;
@@ -24,12 +23,11 @@ public class DeleteUserModel {
             error.put(false, List.of("Some problem, please try again later"));
             return error;
         }
-        Hashtable<Boolean, List<String>> authentificationResult = AuthentificationUser.loginProcessing(
+        return AuthentificationUser.loginProcessing(
                 email,
                 password,
                 users
         );
-        return authentificationResult;
     }
 
     public boolean deleteUser(String email) {
